@@ -16,6 +16,15 @@ class App extends Component {
       </div>
     );
   }
+      componentWillMount() {
+    fetch('http://siabuc.ucol.mx:3000/api/fichas/busqueda/colima')
+      .then((response) => {
+        return response.json()
+      })
+      .then((empleados) => {
+        console.log(empleados)
+      })
+  }
 }
 
 export default App;
